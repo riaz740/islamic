@@ -10,7 +10,11 @@ import 'qibla_view.dart';
 import 'tasbih_view.dart';
 import 'zakat_view.dart';
 import 'hijri_view.dart';
-import 'simple_views.dart';
+
+import 'community_view.dart';
+import 'mosque_view.dart';
+import 'kitab_view.dart';
+import 'donate_view.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});

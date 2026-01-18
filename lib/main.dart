@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'views/main_view.dart';
 import 'utils/theme.dart';
 import 'controllers/settings_controller.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:islamic/l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +31,13 @@ class IslamicApp extends StatelessWidget {
         themeMode: settingsController.isDarkMode.value
             ? ThemeMode.dark
             : ThemeMode.light,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: AppLocalizations.supportedLocales,
         home: const _SplashScreen(),
       ),
     );

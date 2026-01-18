@@ -7,7 +7,8 @@ class SettingsController extends GetxController {
   var selectedLanguage = 'English'.obs;
   var notificationType = 'notification'.obs;
   var syncHomeWidget = false.obs;
-  var calculationMethodIndex = 2.obs; // Default to Muslim World League (usually index 2 or 3 depending on list)
+  var calculationMethodIndex = 2
+      .obs; // Default to Muslim World League (usually index 2 or 3 depending on list)
   var hijriAdjustment = 0.obs;
 
   @override
@@ -38,10 +39,12 @@ class SettingsController extends GetxController {
     selectedLanguage.value = language;
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('language', language);
-    // Add localization logic here later if needed
-    var locale = const Locale('en', 'US');
-    if (language == 'Arabic') {
-      locale = const Locale('ar', 'SA');
+
+    Locale locale;
+    if (language == 'Bangla') {
+      locale = const Locale('bn');
+    } else {
+      locale = const Locale('en');
     }
     Get.updateLocale(locale);
   }
